@@ -9,15 +9,20 @@ My hypothesis is that my Netflix watching hours significantly decrease during ex
 ## Motivation
 The motivation behind this project is twofold:
 - To better understand how I balance my time between fun and studying.
-- To assess whether my habits align with my goals for productivity, especially during exams periods.
+- To assess whether my habits align with my goals for productivity, especially during critical periods like exams.
 
 ## Data Source
+The analysis will be conducted using tools like Python, Excel, and other relevant software to manage and analyze the data.
+
 The primary data source for this project is my Netflix watching history, specifically the hours spent watching content over time. This data will be categorized and analyzed based on:
 - Time periods (regular days vs. exam periods)
 - Watching hours segmented by day and time
 - Genre preferences and other relevant metadata, if available
 
 ## Data Analysis Plan
+## Expected Outcome
+I expect to find clear patterns that show a decrease in Netflix watching hours during exam periods. These insights will help me evaluate how well I manage my time and provide a basis for improving my habits.
+
 1. **Data Cleaning**:
    - Import and preprocess the Netflix watching history data.
    - Filter and organize the data to focus on relevant attributes (e.g., watching hours, timestamps).
@@ -35,3 +40,8 @@ The primary data source for this project is my Netflix watching history, specifi
 
 5. **Visualization**:
    - Create charts and graphs (e.g., time-series plots, heatmaps) to illustrate findings clearly.
+
+6. **Insights and Reflection**:
+   - Summarize insights about my time management and identify areas for improvement.
+7. **Expected Outcome
+   - I expect to find clear patterns that show a decrease in Netflix watching hours during exam periods. These insights will help me evaluate how well I manage my time and provide a basis        for improving my habits.
