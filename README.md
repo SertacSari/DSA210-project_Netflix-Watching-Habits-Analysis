@@ -20,9 +20,6 @@ The primary data source for this project is my Netflix watching history, specifi
 - Genre preferences and other relevant metadata, if available
 
 ## Data Analysis Plan
-## Expected Outcome
-I expect to find clear patterns that show a decrease in Netflix watching hours during exam periods. These insights will help me evaluate how well I manage my time and provide a basis for improving my habits.
-
 1. **Data Cleaning**:
    - Import and preprocess the Netflix watching history data.
    - Filter and organize the data to focus on relevant attributes (e.g., watching hours, timestamps).
