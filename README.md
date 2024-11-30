@@ -43,5 +43,5 @@ I expect to find clear patterns that show a decrease in Netflix watching hours d
 
 6. **Insights and Reflection**:
    - Summarize insights about my time management and identify areas for improvement.
-7. **Expected Outcome
+7. **Expected Outcome**:
    - I expect to find clear patterns that show a decrease in Netflix watching hours during exam periods. These insights will help me evaluate how well I manage my time and provide a basis        for improving my habits.
