@@ -34,3 +34,5 @@ df["Date"] = df["StartTime"].dt.date
 
 # Convert 'Duration' (HH:MM:SS) to hours
 df["Duration"] = pd.to_timedelta(df["Duration"], errors="coerce").dt.total_seconds() / 3600
+
+
