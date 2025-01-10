@@ -35,7 +35,7 @@ The primary data source for this project is my Netflix watching history, specifi
 4. **Statistical Testing**:
    - Conducted a Welch’s t-test to check for significant differences in daily watch hours.
    - Found a p-value of **0.01**, indicating a statistically significant difference in watch hours between exam and non-exam periods.
-   - 
+   
 5. **Machine Learning**  
    - **kMM (K-Means-like)**: A custom clustering approach to group days by watch hours and day of week.  
      - Showed how daily behavior clusters might vary (e.g., high weekend usage vs. low weekday usage).  
