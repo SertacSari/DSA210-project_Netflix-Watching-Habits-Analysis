@@ -143,3 +143,62 @@ plt.xticks(rotation=45)
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+
+
+# Final exam dates:
+# 1) 02-18 Jan 2023
+# 2) 01-11 Jun 2023
+# 3) 06-19 Jan 2024
+# 4) 30 May - 09 Jun 2024
+# 5) 24-27 Aug 2024
+
+exam_periods = [
+    ("02-01-2023", "18-01-2023"),
+    ("01-06-2023", "11-06-2023"),
+    ("06-01-2024", "19-01-2024"),
+    ("30-05-2024", "09-06-2024"),
+    ("24-08-2024", "27-08-2024"),
+]
+
+# Convert them to datetime objects
+exam_periods_dt = []
+for start_str, end_str in exam_periods:
+    start_dt = datetime.strptime(start_str, "%d-%m-%Y")
+    end_dt   = datetime.strptime(end_str,   "%d-%m-%Y")
+    exam_periods_dt.append((start_dt, end_dt))
+
+# Create a function to check if a given date is in any exam period
+def is_in_exam_period(date_dt, periods):
+    for (s, e) in periods:
+        if s <= date_dt <= e:
+            return True
+    return False
+
+# Apply this function to create a boolean column
+daily_watch_time["IsExamPeriod"] = daily_watch_time["Date_dt"].apply(
+    lambda d: is_in_exam_period(d, exam_periods_dt)
+)
+
+# Separate data into Exam vs. Non-exam
+exam_df = daily_watch_time[daily_watch_time["IsExamPeriod"] == True]
+non_exam_df = daily_watch_time[daily_watch_time["IsExamPeriod"] == False]
+
+# Compute mean watch hours
+exam_mean = exam_df["Duration"].mean()
+non_exam_mean = non_exam_df["Duration"].mean()
+
+print("\n=== Exam Period Mean: {:.2f} hours/day ===".format(exam_mean))
+print("=== Non-Exam Period Mean: {:.2f} hours/day ===".format(non_exam_mean))
+
+# T-test to see if the difference is statistically significant
+t_stat, p_val = ttest_ind(
+    exam_df["Duration"].dropna(),
+    non_exam_df["Duration"].dropna(),
+    equal_var=False  # Welch's t-test
+)
+
+print("\n=== T-Test Results (All Exam Periods Combined) ===")
+print(f"T-statistic: {t_stat:.3f}")
+print(f"P-value: {p_val:.3f}")
+print("Note: If p-value < 0.05, there's a significant difference.\n")
