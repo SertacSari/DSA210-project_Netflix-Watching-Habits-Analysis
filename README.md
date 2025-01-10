@@ -3,6 +3,12 @@
 ## Description
 This project analyzes my Netflix watching habits to identify patterns and trends over time. The primary focus is to investigate how my watching behavior changes during exam periods compared to regular times. Using my watching hours as the main data, the project aims to uncover insights about my routines and assess their alignment with my academic responsibilities.
 
+## Project Files
+- Netflix WH Analysis.py                    - Python file for the code
+- Netflix Watchings Habbits Analysis.ipynb  - Jupyter Notebook containing all visualizations and statistical tests
+- [Presentation.pptx](Presentation.pptx)    - Powerpoint file as a presentation for the proejct
+- ViewingActivity.csv file is not uploaded because of the privacy reasons.
+
 ## Hypothesis
 My hypothesis is that my Netflix watching hours significantly decrease during exam periods, reflecting a shift in focus toward studying.
 
@@ -51,9 +57,19 @@ The primary data source for this project is my Netflix watching history, specifi
    - **Observed**: The t-test result (p-value = 0.01) supports the hypothesis that **Netflix watch hours do indeed decrease** during exam periods,    reinforcing the idea that studying displaces leisure time.
 
 7. **Insights and Reflection**:
-   - Understanding how Netflix usage changes with academic demands can inform better scheduling and possibly improve academic performance. 
+   - Understanding how Netflix usage changes with academic demands can inform better scheduling and possibly improve academic performance.
+     
 8. **Expected Outcome**:
    - I expect to find clear patterns that show a decrease in Netflix watching hours during exam periods. These insights will help me evaluate how     well I manage my time and provide a basis for improving my habits.
+  
 9. ## Conclusion
    1. **Hypothesis Confirmation**: The statistically significant difference (p-value < 0.05) indicates we can **reject the null hypothesis** (no      difference). Exam periods show lower average Netflix hours, aligning with the original hypothesis.  
-   2. **Time Management**: Insights confirm a shift in focus toward studying on exam days. This suggests current habits may be effectively            reducing entertainment time when needed.  
+   2. **Time Management**: Insights confirm a shift in focus toward studying on exam days. This suggests current habits may be effectively            reducing entertainment time when needed.
+      
+10. ## Limitations and Future Work:
+   - **Limited Features**: The model primarily used day-of-week for KNN; exam flags, device usage, or time-of-day data could provide richer           insights. 
+   - **No External Factors**: Does not account for other responsibilities (work, social life, or different exam intensities).  
+   - **Small Sample Size?**: If data covers only a limited timeframe, statistical power might be limited.
+   - **Expand to Other Services**: Add data from other streaming platforms or forms of entertainment (gaming, YouTube) for a broader time-            management perspective.  
+   - **Improve ML Models**: Integrate additional variables into KNN or test other models (Random Forest, Neural Networks) for more accurate           predictions.  
+   - **Longer Study Window**: Gather more data across multiple semesters or years to track evolving habits.
