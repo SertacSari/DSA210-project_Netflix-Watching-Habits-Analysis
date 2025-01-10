@@ -35,4 +35,15 @@ df["Date"] = df["StartTime"].dt.date
 # Convert 'Duration' (HH:MM:SS) to hours
 df["Duration"] = pd.to_timedelta(df["Duration"], errors="coerce").dt.total_seconds() / 3600
 
+# Group by Date and sum the daily watch hours
+daily_watch_time = df.groupby("Date")["Duration"].sum().reset_index()
 
+# Convert 'Date' to the desired day-month-year (dd-mm-yyyy) format
+# Note: 'daily_watch_time["Date"]' is a 'datetime.date' object, so we apply strftime in a lambda.
+daily_watch_time["Date"] = daily_watch_time["Date"].apply(
+    lambda d: d.strftime("%d-%m-%Y") if pd.notnull(d) else ""
+)
+
+# Print the daily watch time (for inspection)
+print("\n=== Total Daily Watch Hours (Sertaç) ===")
+print(daily_watch_time) 
